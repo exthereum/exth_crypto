@@ -41,6 +41,8 @@ defmodule ExthCrypto.Mixfile do
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:binary, "~> 0.0.4"},
+      {:pbkdf2_elixir, "~> 0.12"},
+      {:poison, "~> 3.1"},
     ]
   end
 end
