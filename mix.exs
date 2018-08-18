@@ -38,7 +38,7 @@ defmodule ExthCrypto.Mixfile do
       {:libsecp256k1, "~> 0.1.7", app: false},
       {:keccakf1600, "~> 2.0.0", hex: :keccakf1600_orig},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.14", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.17", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:binary, "~> 0.0.4"},
     ]
