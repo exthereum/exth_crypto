@@ -1,3 +1,5 @@
+* 0.1.5
+* Upgraded libsecp256k1 dependency
 * 0.1.4
 * Add MAC stream.
 * Improve signature recovery algorithms
