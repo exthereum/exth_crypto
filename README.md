@@ -1,4 +1,4 @@
-# ExthCrypto
+# ExthCrypto [![CircleCI](https://circleci.com/gh/exthereum/exth_crypto.svg?style=svg)](https://circleci.com/gh/exthereum/exth_crypto)
 
 ExthCrypto handles the majority of cryptographic operations for Exthereum. The goal of this project is to give each Exthereum project a common set of cryptographic functions where the backends can be swapped out as need be. Additionally, more complicated protocols (such as ECIES) can be implemented and tested in this project.
 
