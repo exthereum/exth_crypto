@@ -3,7 +3,7 @@ defmodule ExthCrypto.Mixfile do
 
   def project do
     [app: :exth_crypto,
-     version: "0.1.5",
+     version: "0.1.6",
      elixir: "~> 1.4",
      description: "Exthereum's Crypto Suite.",
       package: [
@@ -35,7 +35,7 @@ defmodule ExthCrypto.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:libsecp256k1, "~> 0.1.7", app: false},
+      {:libsecp256k1, "~> 0.1.9"},
       {:keccakf1600, "~> 2.0.0", hex: :keccakf1600_orig},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.17", only: :dev, runtime: false},
