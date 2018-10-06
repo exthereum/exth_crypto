@@ -13,8 +13,28 @@ jobs:
       - run: mix local.hex --force
       - run: mix local.rebar --force
       - run: mix deps.get
-      - run: mix test
-      - run: mix dialyzer
+      - run: mix format --check-formatted
+      - run:
+          command: mix compile
+          environment:
+            MIX_ENV: test
+
+      - restore_cache:
+          keys:
+            - v2-plt-cache-{{ arch }}-{{ checksum "mix.lock" }}
+            - v2-plt-cache-{{ arch }}
+            - v2-plt-cache
+
+      - run: mix dialyzer --plt
+
+      - save_cache:
+          key: v2-plt-cache-{{ arch }}-{{ checksum "mix.lock" }}
+          paths:
+            - _build
+            - ~/.mix
+
+      - run: mix dialyzer --halt-exit-status
+
       - save_cache:
           key: _build
           paths:
