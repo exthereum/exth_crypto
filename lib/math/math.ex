@@ -22,11 +22,17 @@ defmodule ExthCrypto.Math do
 
       iex> ExthCrypto.Math.mod(-75, 32)
       21
+
+      iex> ExthCrypto.Math.mod(75, -32)
+      -21
+
+      iex> ExthCrypto.Math.mod(-10,-3)
+      -1
   """
   def mod(x, n) do
     remainder = rem(x, n)
 
-    if remainder < 0,
+    if (remainder < 0 and n > 0) or (remainder > 0 and n < 0),
       do: n + remainder,
       else: remainder
   end
