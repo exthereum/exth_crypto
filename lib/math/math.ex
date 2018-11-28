@@ -19,10 +19,23 @@ defmodule ExthCrypto.Math do
 
       iex> ExthCrypto.Math.mod(0, 1337)
       0
+
+      iex> ExthCrypto.Math.mod(-75, 32)
+      21
+
+      iex> ExthCrypto.Math.mod(75, -32)
+      -21
+
+      iex> ExthCrypto.Math.mod(-10,-3)
+      -1
   """
-  def mod(x, n) when x > 0, do: rem x, n
-  def mod(x, n) when x < 0, do: rem n + x, n
-  def mod(0, _n), do: 0
+  def mod(x, n) do
+    remainder = rem(x, n)
+
+    if (remainder < 0 and n > 0) or (remainder > 0 and n < 0),
+      do: n + remainder,
+      else: remainder
+  end
 
   @doc """
   Simple wrapper function to convert a hex string to a binary.
